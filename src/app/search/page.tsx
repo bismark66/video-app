@@ -5,7 +5,7 @@ import React, { useEffect } from "react";
 
 function Search() {
   const fetchTopRated = async () => {
-    const response = await HttpHandler.TopRated();
+    const response = await HttpHandler.Search("avatar");
     console.log("response---", response);
   };
   useEffect(() => {
