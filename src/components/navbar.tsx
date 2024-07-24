@@ -67,10 +67,14 @@ function Navbar() {
         justify="center"
         style={{ background: "#f4f4f4", padding: "10px 0" }}
       >
-        <Col span={12}>
+        <Col xs={22} sm={18} md={20} lg={16}>
           <Row>
             <Col
               span={8}
+              lg={{ span: 10 }}
+              md={{ span: 10 }}
+              sm={{ span: 12 }}
+              xs={{ span: 14 }}
               style={{
                 display: "flex",
                 justifyContent: "center",
@@ -79,7 +83,12 @@ function Navbar() {
             >
               <SearchBar />
             </Col>
-            <Col span={6} offset={10}>
+            <Col
+              lg={{ span: 6, offset: 8 }}
+              md={{ span: 12, offset: 2 }}
+              sm={{ span: 6, offset: 4 }}
+              xs={{ span: 6, offset: 2 }}
+            >
               <Menu
                 onClick={onClick}
                 selectedKeys={[current]}
