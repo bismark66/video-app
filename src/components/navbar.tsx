@@ -3,6 +3,7 @@
 import { Row, Col, Menu, MenuProps } from "antd";
 import Link from "next/link";
 import React, { useState } from "react";
+import SearchBar from "./search-bar";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -63,7 +64,9 @@ function Navbar() {
   return (
     <>
       <Row>
-        <Col span={8}>col-8</Col>
+        <Col span={8}>
+          <SearchBar />
+        </Col>
         <Col span={8} offset={8}>
           <Menu
             onClick={onClick}

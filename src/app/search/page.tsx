@@ -4,6 +4,7 @@ import HttpHandler from "@/api/httpHandler";
 import React, { useEffect } from "react";
 import MovieCard from "@/components/movie-card";
 import Navbar from "@/components/navbar";
+import SearchBar from "@/components/search-bar";
 
 function Search() {
   const fetchTopRated = async () => {
@@ -26,6 +27,7 @@ function Search() {
         title="The Godfather"
         view={10000}
       /> */}
+      {/* <SearchBar /> */}
     </div>
   );
 }
