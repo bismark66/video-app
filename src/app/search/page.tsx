@@ -2,8 +2,9 @@
 "use client";
 import HttpHandler from "@/api/httpHandler";
 import React, { useEffect } from "react";
+import MovieCard from "@/components/movie-card";
 
-function Search({ movies }: any) {
+function Search() {
   const fetchTopRated = async () => {
     const response = await HttpHandler.GetById("tt0068646");
     // const response = await HttpHandler.ExternalId(1022789);
@@ -14,9 +15,17 @@ function Search({ movies }: any) {
     fetchTopRated();
   }, []);
 
-  console.log("movies", movies);
+  //   console.log("movies", movies);
 
-  return <div>Search</div>;
+  return (
+    <div>
+      <MovieCard
+        url={"https://image.tmdb.org/t/p/w500/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg"}
+        title="The Godfather"
+        view={10000}
+      />
+    </div>
+  );
 }
 
 export default Search;
