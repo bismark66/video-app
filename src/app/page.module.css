@@ -1,3 +1,5 @@
+/** @format */
+
 .main {
   display: flex;
   flex-direction: column;
@@ -168,7 +170,7 @@
   .description div {
     display: flex;
     justify-content: center;
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
   }
 
