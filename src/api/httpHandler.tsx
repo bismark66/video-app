@@ -12,12 +12,10 @@ const HttpHandler = {
     HttpInstance(`/movie/upcoming?api_key=${api_key}`, "GET"),
   Search: async (value: string) =>
     HttpInstance(`/search/movie?query=${value}`, "GET"),
-  //   Genre: async (value: string) =>
-  //     HttpInstance(`/search/movie?query=${value}`, "GET"),
   ExternalId: async (id: Number) =>
     HttpInstance(`/movie/${id}/external_ids?api_key=${api_key}`, "GET"),
-  GetById: async (external_id: Number) =>
-    HttpInstance(`/find/${external_id}?api_key=${api_key}`, "GET"),
+  GetById: async (external_id: String) =>
+    HttpInstance(`/find/${external_id}?external_source=imdb_id`, "GET"),
 };
 
 export default HttpHandler;
