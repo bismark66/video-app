@@ -14,8 +14,10 @@ const HttpHandler = {
     HttpInstance(`/search/movie?query=${value}`, "GET"),
   //   Genre: async (value: string) =>
   //     HttpInstance(`/search/movie?query=${value}`, "GET"),
-  PUT: "PUT",
-  DELETE: "DELETE",
+  ExternalId: async (id: Number) =>
+    HttpInstance(`/movie/${id}/external_ids?api_key=${api_key}`, "GET"),
+  GetById: async (external_id: Number) =>
+    HttpInstance(`/find/${external_id}?api_key=${api_key}`, "GET"),
 };
 
 export default HttpHandler;
