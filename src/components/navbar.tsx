@@ -63,18 +63,37 @@ function Navbar() {
 
   return (
     <>
-      <Row>
-        <Col span={8}>
-          <SearchBar />
-        </Col>
-        <Col span={8} offset={8}>
-          <Menu
-            onClick={onClick}
-            selectedKeys={[current]}
-            mode="horizontal"
-            items={items}
-            style={{ background: "none" }}
-          />
+      <Row
+        justify="center"
+        style={{ background: "#f4f4f4", padding: "10px 0" }}
+      >
+        <Col span={12}>
+          <Row>
+            <Col
+              span={8}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignSelf: "center",
+              }}
+            >
+              <SearchBar />
+            </Col>
+            <Col span={6} offset={10}>
+              <Menu
+                onClick={onClick}
+                selectedKeys={[current]}
+                mode="horizontal"
+                items={items}
+                style={{
+                  background: "none",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+                overflowedIndicator={"hat"}
+              />
+            </Col>
+          </Row>
         </Col>
       </Row>
     </>
