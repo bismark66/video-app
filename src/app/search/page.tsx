@@ -6,6 +6,7 @@ import styles from "../page.module.css";
 import MovieCard from "@/components/movie-card";
 import Navbar from "@/components/navbar";
 import SearchBar from "@/components/search-bar";
+import MovieRow from "@/components/row";
 
 function Search() {
   const fetchTopRated = async () => {
@@ -29,6 +30,9 @@ function Search() {
         view={10000}
       /> */}
       {/* <SearchBar /> */}
+      <MovieRow />
+      <MovieRow />
+      <MovieRow />
     </div>
   );
 }
