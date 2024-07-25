@@ -21,12 +21,13 @@ interface Movie {
   id: number;
 }
 type AsyncFunctionProp = () => Promise<any>;
+type RowHead = string;
 
 function MovieRow({
-  movies,
+  head,
   request,
 }: {
-  movies: Movie[];
+  head: RowHead;
   request: AsyncFunctionProp;
 }) {
   const [items, setItems] = useState([] as unknown as Movie);
@@ -77,7 +78,7 @@ function MovieRow({
             alignContent: "start",
           }}
         >
-          <Typography.Title level={2}>Most Popular</Typography.Title>
+          <Typography.Title level={2}>{head}</Typography.Title>
         </Col>
         <Col offset={10} span={2}>
           {/* hello */}
