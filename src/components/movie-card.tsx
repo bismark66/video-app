@@ -18,7 +18,9 @@ function MovieCard({ url, title, view }: Props) {
         style={{ width: 240 }}
         cover={<img alt={title} src={url} height={220} />}
       >
-        <Meta title={<h3>{title}</h3>} description={`Views:${view}`} />
+        {title && (
+          <Meta title={<h3>{title}</h3>} description={`Views:${view}`} />
+        )}
       </Card>
     </>
   );
