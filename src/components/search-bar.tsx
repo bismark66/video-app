@@ -8,8 +8,9 @@ type SearchProps = GetProps<typeof Input.Search>;
 
 const { Search } = Input;
 
-function SearchBar() {
+function SearchBar(props: any) {
   const [change, setChange] = useState("");
+  const [movies, setMovies] = useState([] as any);
 
   const onSearch: SearchProps["onSearch"] = async (value, _e, info) => {
     const response = await HttpHandler.Search(value);
@@ -37,7 +38,7 @@ function SearchBar() {
         allowClear
         size="middle"
         onChange={(e) => setChange(e.target.value)}
-        onSearch={onSearch}
+        onSearch={props.onSearch}
         style={{ width: 400 }}
       />
     </>
