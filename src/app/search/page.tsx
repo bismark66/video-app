@@ -15,6 +15,7 @@ interface Movie {
   [x: string]: any;
   //   results(results: any): unknown;
   poster_path: string;
+  backdrop_path: string;
   title: string;
   popularity: number;
   id: number;
@@ -41,9 +42,11 @@ function Search() {
       <Col span={6} key={index}>
         <Link href={`/movies/${movie.id}`}>
           <MovieCard
-            url={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-            title={movie.title}
-            view={movie.popularity}
+            url={`https://image.tmdb.org/t/p/w500/${
+              movie.poster_path ?? movie.backdrop_path
+            }`}
+            title={movie?.title}
+            view={movie?.popularity}
           />
         </Link>
       </Col>
@@ -56,10 +59,10 @@ function Search() {
 
       <Row
         wrap={true}
-        gutter={16}
+        gutter={[16, 16]}
         justify={"center"}
         className={styles.description}
-        style={{ margin: "0 0 30px 0" }}
+        style={{ margin: "20px 0 30px 0" }}
         // style={{ overflowX: "auto", marginTop: 20 }}
       >
         {allMovies}

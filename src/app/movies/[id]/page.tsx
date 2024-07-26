@@ -30,13 +30,12 @@ export default function Page({
   };
 }) {
   const [movie, setMovie] = useState({} as unknown as Movie);
-  // const router = useRouter();
-  // const { slug } = router.query;
-  // const [post, setPost] = useState(null);
 
   async function fetchMovie(id: number) {
     const externalId = await HttpHandler.ExternalId(id);
     let movieId = externalId.imdb_id;
+    console.log(movieId);
+
     const response = await HttpHandler.GetById(movieId);
     const results = response.movie_results[0] as Movie;
     console.log("--", results);
@@ -48,29 +47,52 @@ export default function Page({
   useEffect(() => {
     fetchMovie(params.id);
   }, []);
-  console.log(movie, movie.overview);
 
   return (
     <div
     // className={styles.main}
     >
-      <Row style={{ padding: "10px 0" }}>
-        <Col span={4} offset={5}>
-          <MovieCard
-            url={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-            // title={movie.title}
-            // view={movie.popularity}
-          />
-        </Col>
-        <Col span={5}>
-          <h1>{movie.title}</h1>
-          <p style={{ padding: "10px 0" }}>{movie.overview}</p>
-          <p style={{ padding: "10px 0" }}>
-            Release Date : {movie.release_date} Views : {movie.popularity}
-          </p>
-          <p>id: {movie.id}</p>
-        </Col>
-      </Row>
+      {movie ? (
+        <>
+          <Row style={{ padding: "10px 0", height: "100%" }}>
+            <Col span={4} offset={5}>
+              <MovieCard
+                url={`https://image.tmdb.org/t/p/w500/${movie?.poster_path}`}
+              />
+            </Col>
+            <Col span={5} style={{ marginLeft: 10 }}>
+              <h1>{movie?.title}</h1>
+              <p style={{ padding: "10px 0" }}>{movie?.overview}</p>
+              <p style={{ padding: "10px 0" }}>
+                <span style={{ paddingRight: 20 }}>
+                  {" "}
+                  <strong>Release Date :</strong> {movie?.release_date}
+                </span>
+                <span>
+                  {" "}
+                  <strong>Views : </strong>
+                  {movie?.popularity}
+                </span>{" "}
+              </p>
+              <p>
+                <strong>Id :</strong> {movie?.id}
+              </p>
+            </Col>
+          </Row>
+        </>
+      ) : (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            alignContent: "center",
+            height: "100vh",
+          }}
+        >
+          <h1>No Data of Movie Exist</h1>
+        </div>
+      )}
     </div>
   );
 }
