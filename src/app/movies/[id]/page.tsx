@@ -55,7 +55,7 @@ export default function Page({
     // className={styles.main}
     >
       <Row style={{ padding: "10px 0" }}>
-        <Col span={4}>
+        <Col span={4} offset={5}>
           <MovieCard
             url={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
             title={movie.title}
