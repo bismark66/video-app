@@ -58,8 +58,8 @@ export default function Page({
         <Col span={4} offset={5}>
           <MovieCard
             url={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-            title={movie.title}
-            view={movie.popularity}
+            // title={movie.title}
+            // view={movie.popularity}
           />
         </Col>
         <Col span={5}>
