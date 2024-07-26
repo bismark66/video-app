@@ -51,16 +51,19 @@ export default function Page({
   console.log(movie, movie.overview);
 
   return (
-    <div
-    // className={styles.main}
+    <
+      // className={styles.main}
     >
-      <Row style={{ padding: "10px 0" }}>
+      <Row
+      // style={{ padding: "10px 0" }}
+      >
         <Col
-          span={4}
+          // span={4}
+          // offset={5}
           xl={{ span: 4, offset: 5 }}
-          lg={{ span: 4, offset: 5 }}
-          md={{ span: 4, offset: 5 }}
-          sm={{ span: 10, offset: 2 }}
+          lg={{ span: 4, offset: 4 }}
+          md={{ span: 5, offset: 2 }}
+          // sm={{ span: 10, offset: 2 }}
         >
           <MovieCard
             url={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
@@ -68,7 +71,18 @@ export default function Page({
             // view={movie.popularity}
           />
         </Col>
-        <Col xl={4} lg={4} md={8} sm={10}>
+        <Col
+          // span={8}
+          xl={{ span: 8, offset: 0 }}
+          lg={{ span: 8, offset: 2 }}
+          md={{ span: 10, offset: 4 }}
+          // sm={10}
+          style={{
+            display: "flex",
+            justifyContent: "start",
+            flexDirection: "column",
+          }}
+        >
           <h1>{movie.title}</h1>
           <p style={{ padding: "10px 0" }}>{movie.overview}</p>
           <p style={{ padding: "10px 0" }}>
@@ -77,6 +91,6 @@ export default function Page({
           <p>id: {movie.id}</p>
         </Col>
       </Row>
-    </div>
+    </>
   );
 }
