@@ -74,14 +74,3 @@ export default function Page({
     </div>
   );
 }
-
-// function fetchData(id: number) {
-//   throw new Error("Function not implemented.");
-// }
-// // export async function generateStaticParams() {
-//   const posts = await fetch("https://.../posts").then((res) => res.json());
-
-//   return posts.map((post) => ({
-//     slug: post.slug,
-//   }));
-// }
