@@ -9,7 +9,11 @@ import SearchBar from "@/components/search-bar";
 import MovieRow from "@/components/row";
 
 function Search() {
-  return <div className={styles.main}>Search</div>;
+  return (
+    <div className={styles.main}>
+      <SearchBar />
+    </div>
+  );
 }
 
 export default Search;
