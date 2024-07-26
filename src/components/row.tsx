@@ -46,21 +46,18 @@ function MovieRow({
     setItems(results);
   };
 
-  function handleRouteToSlug(id: number) {}
-
   console.log("items", items);
   const allMovies = items.map(
     (item: Movie, index: React.Key | null | undefined) => (
       <Col
-        // span={6}
+        span={24}
         xxl={6}
         xl={6}
         lg={6}
         md={8}
         sm={12}
-        xs={12}
+        // xs={24}
         key={index}
-        onClick={() => handleRouteToSlug(item.id)}
       >
         <Link href={`/movies/${item.id}`}>
           <MovieCard
