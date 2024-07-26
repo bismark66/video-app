@@ -55,14 +55,20 @@ export default function Page({
     // className={styles.main}
     >
       <Row style={{ padding: "10px 0" }}>
-        <Col span={4} offset={5}>
+        <Col
+          span={4}
+          xl={{ span: 4, offset: 5 }}
+          lg={{ span: 4, offset: 5 }}
+          md={{ span: 4, offset: 5 }}
+          sm={{ span: 10, offset: 2 }}
+        >
           <MovieCard
             url={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
             // title={movie.title}
             // view={movie.popularity}
           />
         </Col>
-        <Col span={5}>
+        <Col xl={4} lg={4} md={8} sm={10}>
           <h1>{movie.title}</h1>
           <p style={{ padding: "10px 0" }}>{movie.overview}</p>
           <p style={{ padding: "10px 0" }}>
