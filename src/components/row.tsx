@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Typography, Flex, Button, Row, Col } from "antd";
 import styles from "@/app/page.module.css";
 import MovieCard from "./movie-card";
+import Link from "next/link";
 
 const boxStyle: React.CSSProperties = {
   width: "100%",
@@ -45,15 +46,19 @@ function MovieRow({
     setItems(results);
   };
 
+  function handleRouteToSlug(id: number) {}
+
   console.log("items", items);
   const allMovies = items.map(
     (item: Movie, index: React.Key | null | undefined) => (
-      <Col span={6} key={index} onClick={() => alert(item.id)}>
-        <MovieCard
-          url={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
-          title={item.title}
-          view={item.popularity}
-        />
+      <Col span={6} key={index} onClick={() => handleRouteToSlug(item.id)}>
+        <Link href={`/movies/${item.id}`}>
+          <MovieCard
+            url={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+            title={item.title}
+            view={item.popularity}
+          />
+        </Link>
       </Col>
     )
   );
