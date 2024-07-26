@@ -56,10 +56,10 @@ function Search() {
 
       <Row
         wrap={true}
-        gutter={16}
+        gutter={[16, 16]}
         justify={"center"}
         className={styles.description}
-        style={{ margin: "0 0 30px 0" }}
+        style={{ margin: "20px 0 30px 0" }}
         // style={{ overflowX: "auto", marginTop: 20 }}
       >
         {allMovies}

@@ -51,18 +51,38 @@ export default function Page({
   console.log(movie, movie.overview);
 
   return (
-    <div
-    // className={styles.main}
+    <
+      // className={styles.main}
     >
-      <Row style={{ padding: "10px 0" }}>
-        <Col span={4} offset={5}>
+      <Row
+      // style={{ padding: "10px 0" }}
+      >
+        <Col
+          // span={4}
+          // offset={5}
+          xl={{ span: 4, offset: 5 }}
+          lg={{ span: 4, offset: 4 }}
+          md={{ span: 5, offset: 2 }}
+          // sm={{ span: 10, offset: 2 }}
+        >
           <MovieCard
             url={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
             // title={movie.title}
             // view={movie.popularity}
           />
         </Col>
-        <Col span={5}>
+        <Col
+          // span={8}
+          xl={{ span: 8, offset: 0 }}
+          lg={{ span: 8, offset: 2 }}
+          md={{ span: 10, offset: 4 }}
+          // sm={10}
+          style={{
+            display: "flex",
+            justifyContent: "start",
+            flexDirection: "column",
+          }}
+        >
           <h1>{movie.title}</h1>
           <p style={{ padding: "10px 0" }}>{movie.overview}</p>
           <p style={{ padding: "10px 0" }}>
@@ -71,17 +91,6 @@ export default function Page({
           <p>id: {movie.id}</p>
         </Col>
       </Row>
-    </div>
+    </>
   );
 }
-
-// function fetchData(id: number) {
-//   throw new Error("Function not implemented.");
-// }
-// // export async function generateStaticParams() {
-//   const posts = await fetch("https://.../posts").then((res) => res.json());
-
-//   return posts.map((post) => ({
-//     slug: post.slug,
-//   }));
-// }
