@@ -51,7 +51,17 @@ function MovieRow({
   console.log("items", items);
   const allMovies = items.map(
     (item: Movie, index: React.Key | null | undefined) => (
-      <Col span={6} key={index} onClick={() => handleRouteToSlug(item.id)}>
+      <Col
+        // span={6}
+        xxl={6}
+        xl={6}
+        lg={6}
+        md={8}
+        sm={12}
+        xs={12}
+        key={index}
+        onClick={() => handleRouteToSlug(item.id)}
+      >
         <Link href={`/movies/${item.id}`}>
           <MovieCard
             url={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
@@ -76,6 +86,7 @@ function MovieRow({
       >
         <Col
           span={12}
+          xs={16}
           style={{
             display: "flex",
             justifyContent: "space-between",
@@ -85,12 +96,17 @@ function MovieRow({
         >
           <Typography.Title level={2}>{head}</Typography.Title>
         </Col>
-        <Col offset={10} span={2}>
+        <Col span={2} xs={18}>
           {/* hello */}
           &nbsp;
         </Col>
 
-        <Row wrap={false} className={styles.row} style={{ overflowX: "auto" }}>
+        <Row
+          wrap={false}
+          gutter={[16, 16]}
+          className={styles.row}
+          style={{ overflowX: "auto" }}
+        >
           {allMovies}
         </Row>
       </Row>
