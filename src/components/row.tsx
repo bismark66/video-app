@@ -28,11 +28,9 @@ function MovieRow({
   const fetchData = async () => {
     const response = await request();
     const results = response.results as Movie;
-    // console.log("response---", results);
     setItems(results);
   };
 
-  //   console.log("items", items);
   const allMovies = items.map(
     (item: Movie, index: React.Key | null | undefined) => (
       <Col

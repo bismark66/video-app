@@ -1,8 +1,8 @@
 /** @format */
 "use client";
-import { Row, Col, Menu, MenuProps, GetProps, Input, Result } from "antd";
+import { Row, Col, Menu, MenuProps, GetProps, Input } from "antd";
 import Link from "next/link";
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { useState } from "react";
 import SearchBar from "./search-bar";
 import { useRouter } from "next/navigation";
 import HttpHandler from "@/api/httpHandler";
@@ -23,7 +23,6 @@ const items: MenuItem[] = [
 type SearchProps = GetProps<typeof Input.Search>;
 interface Movie {
   [x: string]: any;
-  //   results(results: any): unknown;
   poster_path: string;
   title: string;
   popularity: number;
@@ -31,34 +30,20 @@ interface Movie {
 }
 
 function Navbar({ search }: { search: boolean }) {
-  const [current, setCurrent] = useState("mail");
+  const [current, setCurrent] = useState("home");
   const router = useRouter();
 
-  // console.log("router", router.route);
   const onClick: MenuProps["onClick"] = (e) => {
     console.log("click ", e);
     setCurrent(e.key);
   };
 
   const onSearch: SearchProps["onSearch"] = async (value: string, _e: any) => {
-    console.log("this is value", value);
-    // const onSearch: SearchProps["onSearch"] = async (value: string, _e: any) => {
-    //   console.log("this is value", value);
     const response = await HttpHandler.Search(value);
-
     const results = response.results as Movie;
-    console.log("response---", results);
-
     localStorage.setItem("search", JSON.stringify(results));
 
     router.push("/search");
-    // router.push({
-    //   pathname: '/search',
-    //   query: { data: JSON.stringify(results) } as {data:string}
-    // });
-    // setMovies(results);
-    // console.log(response);
-    // setChange(value);
   };
 
   return (
