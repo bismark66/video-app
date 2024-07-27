@@ -33,7 +33,7 @@ function MovieRow({
 }) {
   const [items, setItems] = useState([] as unknown as Movie);
 
-  console.log("this is request", request);
+  //   console.log("this is request", request);
 
   const fetchData = async () => {
     // const response = await HttpHandler.GetById("tt0068646");
@@ -41,12 +41,12 @@ function MovieRow({
     const response = await request();
 
     const results = response.results as Movie;
-    console.log("response---", results);
+    // console.log("response---", results);
 
     setItems(results);
   };
 
-  console.log("items", items);
+  //   console.log("items", items);
   const allMovies = items.map(
     (item: Movie, index: React.Key | null | undefined) => (
       <Col

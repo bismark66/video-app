@@ -12,7 +12,7 @@ export async function HttpInstance(url: string, method: string) {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_ACCESS_TOKEN}`,
     },
   });
-  console.log("---", fetchData);
+  // console.log("---", fetchData);
 
   const res = HttpResponse(fetchData);
 

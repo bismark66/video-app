@@ -9,6 +9,8 @@ import SearchBar from "@/components/search-bar";
 import MovieRow from "@/components/row";
 import { GetProps, Input, Col, Row } from "antd";
 import Link from "next/link";
+import RootLayout from "../layout";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 type SearchProps = GetProps<typeof Input.Search>;
 interface Movie {
@@ -23,6 +25,9 @@ interface Movie {
 function Search() {
   const [change, setChange] = useState("");
   const [movies, setMovies] = useState([] as any);
+  const router = useSearchParams();
+  // const data = JSON.parse(router.get("query"));
+  const pathname = usePathname();
 
   const onSearch: SearchProps["onSearch"] = async (value: string, _e: any) => {
     console.log("this is value", value);
@@ -50,21 +55,33 @@ function Search() {
     )
   );
 
-  return (
-    <div className={styles.main}>
-      <SearchBar onSearch={onSearch} />
+  useEffect(() => {
+    let movies = localStorage.getItem("search");
+    localStorage.removeItem("search");
+    console.log(movies);
+    if (movies) {
+      setMovies(JSON.parse(movies));
+    }
+  }, [localStorage.getItem("search")]);
 
-      <Row
-        wrap={true}
-        gutter={[16, 16]}
-        justify={"center"}
-        className={styles.description}
-        style={{ margin: "20px 0 30px 0" }}
-        // style={{ overflowX: "auto", marginTop: 20 }}
-      >
-        {allMovies}
-      </Row>
-    </div>
+  return (
+    <RootLayout>
+      <Navbar search={pathname === "/"} />
+      <div className={styles.main}>
+        <SearchBar onSearch={onSearch} />
+
+        <Row
+          wrap={true}
+          gutter={[16, 16]}
+          justify={"center"}
+          className={styles.description}
+          style={{ margin: "20px 0 30px 0" }}
+          // style={{ overflowX: "auto", marginTop: 20 }}
+        >
+          {allMovies}
+        </Row>
+      </div>
+    </RootLayout>
   );
 }
 

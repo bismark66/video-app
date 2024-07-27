@@ -6,6 +6,9 @@ import { Row, Col } from "antd";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import styles from "@/app/page.module.css";
+import RootLayout from "@/app/layout";
+import { usePathname } from "next/navigation";
+import Navbar from "@/components/navbar";
 
 // function Dynamic() {
 //   return <div>Dynamic</div>;
@@ -30,6 +33,7 @@ export default function Page({
   };
 }) {
   const [movie, setMovie] = useState({} as unknown as Movie);
+  const pathname = usePathname();
   // const router = useRouter();
   // const { slug } = router.query;
   // const [post, setPost] = useState(null);
@@ -51,9 +55,11 @@ export default function Page({
   console.log(movie, movie.overview);
 
   return (
-    <
-      // className={styles.main}
-    >
+    <RootLayout>
+      <Navbar search={pathname === "/"} />
+      {/* <
+        // className={styles.main}
+      > */}
       <Row
       // style={{ padding: "10px 0" }}
       >
@@ -91,6 +97,7 @@ export default function Page({
           <p>id: {movie.id}</p>
         </Col>
       </Row>
-    </>
+      {/* </> */}
+    </RootLayout>
   );
 }
