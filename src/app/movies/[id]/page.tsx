@@ -3,18 +3,9 @@
 import HttpHandler from "@/api/httpHandler";
 import MovieCard from "@/components/movie-card";
 import { Row, Col } from "antd";
-import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import styles from "@/app/page.module.css";
-import RootLayout from "@/app/layout";
-import { usePathname } from "next/navigation";
-import Navbar from "@/components/navbar";
+import styles from "../../page.module.css";
 
-// function Dynamic() {
-//   return <div>Dynamic</div>;
-// }
-
-// export default Dynamic;
 interface Movie {
   poster_path: string;
   title: string;
@@ -33,17 +24,12 @@ export default function Page({
   };
 }) {
   const [movie, setMovie] = useState({} as unknown as Movie);
-  const pathname = usePathname();
-  // const router = useRouter();
-  // const { slug } = router.query;
-  // const [post, setPost] = useState(null);
 
   async function fetchMovie(id: number) {
     const externalId = await HttpHandler.ExternalId(id);
     let movieId = externalId.imdb_id;
     const response = await HttpHandler.GetById(movieId);
     const results = response.movie_results[0] as Movie;
-    console.log("--", results);
     setMovie(results);
   }
 
@@ -55,14 +41,8 @@ export default function Page({
   console.log(movie, movie.overview);
 
   return (
-    // <RootLayout>
-    //   <Navbar search={pathname === "/"} />
-    <
-      // className={styles.main}
-    >
-      <Row
-      // style={{ padding: "10px 0" }}
-      >
+    <div className={styles.main}>
+      <Row>
         <Col
           // span={4}
           // offset={5}
@@ -73,8 +53,6 @@ export default function Page({
         >
           <MovieCard
             url={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-            // title={movie.title}
-            // view={movie.popularity}
           />
         </Col>
         <Col
@@ -97,7 +75,6 @@ export default function Page({
           <p>id: {movie.id}</p>
         </Col>
       </Row>
-    </>
-    // </RootLayout>
+    </div>
   );
 }

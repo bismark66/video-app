@@ -4,18 +4,13 @@ import HttpHandler from "@/api/httpHandler";
 import React, { useEffect, useState } from "react";
 import styles from "../page.module.css";
 import MovieCard from "@/components/movie-card";
-import Navbar from "@/components/navbar";
 import SearchBar from "@/components/search-bar";
-import MovieRow from "@/components/row";
 import { GetProps, Input, Col, Row } from "antd";
 import Link from "next/link";
-import RootLayout from "../layout";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 type SearchProps = GetProps<typeof Input.Search>;
 interface Movie {
   [x: string]: any;
-  //   results(results: any): unknown;
   poster_path: string;
   title: string;
   popularity: number;
@@ -23,22 +18,14 @@ interface Movie {
 }
 
 function Search() {
-  const [change, setChange] = useState("");
+  // const [change, setChange] = useState("");
   const [movies, setMovies] = useState([] as any);
-  const router = useSearchParams();
-  // const data = JSON.parse(router.get("query"));
-  const pathname = usePathname();
 
   const onSearch: SearchProps["onSearch"] = async (value: string, _e: any) => {
-    console.log("this is value", value);
     const response = await HttpHandler.Search(value);
-
     const results = response.results as Movie;
-    console.log("response---", results);
 
     setMovies(results);
-    console.log(response);
-    setChange(value);
   };
 
   // if (movies.length != 0) return;
@@ -57,8 +44,6 @@ function Search() {
     )
   );
 
-  console.log("this is all", allMovies);
-
   useEffect(() => {
     let movies = localStorage.getItem("search");
     localStorage.removeItem("search");
@@ -69,8 +54,6 @@ function Search() {
   }, [localStorage.getItem("search")]);
 
   return (
-    // <RootLayout>
-    //   <Navbar search={pathname === "/"} />
     <div className={styles.main}>
       <SearchBar onSearch={onSearch} />
 
@@ -85,7 +68,6 @@ function Search() {
         {allMovies.length !== 0 ? allMovies : <h1>No Movie FOund</h1>}
       </Row>
     </div>
-    // </RootLayout>
   );
 }
 
