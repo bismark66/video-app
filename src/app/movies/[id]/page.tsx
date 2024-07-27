@@ -55,11 +55,11 @@ export default function Page({
   console.log(movie, movie.overview);
 
   return (
-    <RootLayout>
-      <Navbar search={pathname === "/"} />
-      {/* <
-        // className={styles.main}
-      > */}
+    // <RootLayout>
+    //   <Navbar search={pathname === "/"} />
+    <
+      // className={styles.main}
+    >
       <Row
       // style={{ padding: "10px 0" }}
       >
@@ -97,7 +97,7 @@ export default function Page({
           <p>id: {movie.id}</p>
         </Col>
       </Row>
-      {/* </> */}
-    </RootLayout>
+    </>
+    // </RootLayout>
   );
 }

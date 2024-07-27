@@ -31,22 +31,22 @@ export default function Home() {
   // console.log("movies", movies);
 
   return (
-    <RootLayout>
-      <Navbar search={pathname === "/"} />
-      <div className={styles.main}>
-        {/* <Navbar /> */}
-        {/* <MovieCard
+    // <RootLayout>
+    //   <Navbar search={pathname === "/"} />
+    <div className={styles.main}>
+      {/* <Navbar /> */}
+      {/* <MovieCard
         url={"https://image.tmdb.org/t/p/w500/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg"}
         title="The Godfather"
         view={10000}
       /> */}
-        {/* <SearchBar /> */}
-        <MovieRow head={"Popular"} request={Popular} />
-        <MovieRow head={"Top Rated"} request={TopRated} />
-        <MovieRow head={"Up Coming"} request={Upcoming} />
-        {/* <MovieRow />
+      {/* <SearchBar /> */}
+      <MovieRow head={"Popular"} request={Popular} />
+      <MovieRow head={"Top Rated"} request={TopRated} />
+      <MovieRow head={"Up Coming"} request={Upcoming} />
+      {/* <MovieRow />
       <MovieRow /> */}
-      </div>
-    </RootLayout>
+    </div>
+    // </RootLayout>
   );
 }

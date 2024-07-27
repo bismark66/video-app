@@ -45,7 +45,7 @@ import { usePathname } from "next/navigation";
 
 const RootLayout = ({ children }: React.PropsWithChildren) => {
   // const router = useRouter();
-  // const pathname = usePathname();
+  const pathname = usePathname();
 
   return (
     <html lang="en">
@@ -55,7 +55,7 @@ const RootLayout = ({ children }: React.PropsWithChildren) => {
             {router.pathname === '/' && <SearchBar />}
           </Navbar> */}
 
-          {/* <Navbar search={pathname === "/"} /> */}
+          <Navbar search={pathname === "/"} />
 
           {children}
         </AntdRegistry>

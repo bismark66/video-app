@@ -65,23 +65,23 @@ function Search() {
   }, [localStorage.getItem("search")]);
 
   return (
-    <RootLayout>
-      <Navbar search={pathname === "/"} />
-      <div className={styles.main}>
-        <SearchBar onSearch={onSearch} />
+    // <RootLayout>
+    //   <Navbar search={pathname === "/"} />
+    <div className={styles.main}>
+      <SearchBar onSearch={onSearch} />
 
-        <Row
-          wrap={true}
-          gutter={[16, 16]}
-          justify={"center"}
-          className={styles.description}
-          style={{ margin: "20px 0 30px 0" }}
-          // style={{ overflowX: "auto", marginTop: 20 }}
-        >
-          {allMovies}
-        </Row>
-      </div>
-    </RootLayout>
+      <Row
+        wrap={true}
+        gutter={[16, 16]}
+        justify={"center"}
+        className={styles.description}
+        style={{ margin: "20px 0 30px 0" }}
+        // style={{ overflowX: "auto", marginTop: 20 }}
+      >
+        {allMovies}
+      </Row>
+    </div>
+    // </RootLayout>
   );
 }
 
