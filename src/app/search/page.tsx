@@ -41,6 +41,8 @@ function Search() {
     setChange(value);
   };
 
+  // if (movies.length != 0) return;
+
   const allMovies = movies.map(
     (movie: any, index: React.Key | null | undefined) => (
       <Col span={6} key={index}>
@@ -54,6 +56,8 @@ function Search() {
       </Col>
     )
   );
+
+  console.log("this is all", allMovies);
 
   useEffect(() => {
     let movies = localStorage.getItem("search");
@@ -78,7 +82,7 @@ function Search() {
         style={{ margin: "20px 0 30px 0" }}
         // style={{ overflowX: "auto", marginTop: 20 }}
       >
-        {allMovies}
+        {allMovies.length !== 0 ? allMovies : <h1>No Movie FOund</h1>}
       </Row>
     </div>
     // </RootLayout>
