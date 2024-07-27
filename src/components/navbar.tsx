@@ -69,7 +69,7 @@ function Navbar({ search }: { search: boolean }) {
               {search ? <SearchBar onSearch={onSearch} /> : <>&nbsp;</>}
             </Col>
             <Col
-              lg={{ span: 6, offset: 8 }}
+              lg={{ span: 4, offset: 8 }}
               md={{ span: 12, offset: 2 }}
               sm={{ span: 6, offset: 4 }}
               xs={{ span: 6, offset: 2 }}
