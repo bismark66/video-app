@@ -33,16 +33,10 @@ function MovieRow({
 }) {
   const [items, setItems] = useState([] as unknown as Movie);
 
-  //   console.log("this is request", request);
-
   const fetchData = async () => {
-    // const response = await HttpHandler.GetById("tt0068646");
-    // const response = await HttpHandler.ExternalId(1022789);
     const response = await request();
-
     const results = response.results as Movie;
     // console.log("response---", results);
-
     setItems(results);
   };
 
@@ -94,7 +88,6 @@ function MovieRow({
           <Typography.Title level={2}>{head}</Typography.Title>
         </Col>
         <Col span={2} xs={18}>
-          {/* hello */}
           &nbsp;
         </Col>
 
