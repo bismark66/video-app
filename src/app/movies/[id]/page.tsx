@@ -5,6 +5,7 @@ import MovieCard from "@/components/movie-card";
 import { Row, Col } from "antd";
 import React, { useEffect, useState } from "react";
 import styles from "../../page.module.css";
+import Loading from "@/components/loading";
 
 interface Movie {
   poster_path: string;
@@ -24,13 +25,17 @@ export default function Page({
   };
 }) {
   const [movie, setMovie] = useState({} as unknown as Movie);
+  const [isLoading, setIsLoading] = useState(false);
 
   async function fetchMovie(id: number) {
+    setIsLoading(true);
     const externalId = await HttpHandler.ExternalId(id);
     let movieId = externalId.imdb_id;
     const response = await HttpHandler.GetById(movieId);
     const results = response.movie_results[0] as Movie;
+
     setMovie(results);
+    setIsLoading(false);
   }
 
   console.log(params.id);
@@ -39,6 +44,8 @@ export default function Page({
     fetchMovie(params.id);
   }, []);
   console.log(movie, movie.overview);
+
+  if (isLoading) return <Loading />;
 
   return (
     <div className={styles.main}>

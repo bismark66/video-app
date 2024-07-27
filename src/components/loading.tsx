@@ -11,6 +11,8 @@ function Loading() {
         justifyContent: "center",
         alignContent: "center",
         alignItems: "center",
+        margin: "0 auto",
+        height: "100vh",
       }}
     >
       <Spin indicator={<LoadingOutlined style={{ fontSize: 48 }} spin />} />
