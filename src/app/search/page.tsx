@@ -7,6 +7,7 @@ import MovieCard from "@/components/movie-card";
 import SearchBar from "@/components/search-bar";
 import { GetProps, Input, Col, Row } from "antd";
 import Link from "next/link";
+import Loading from "@/components/loading";
 
 type SearchProps = GetProps<typeof Input.Search>;
 interface Movie {
@@ -18,14 +19,16 @@ interface Movie {
 }
 
 function Search() {
-  // const [change, setChange] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [movies, setMovies] = useState([] as any);
 
   const onSearch: SearchProps["onSearch"] = async (value: string, _e: any) => {
+    setIsLoading(true);
     const response = await HttpHandler.Search(value);
     const results = response.results as Movie;
 
     setMovies(results);
+    setIsLoading(false);
   };
 
   // if (movies.length != 0) return;
@@ -52,6 +55,8 @@ function Search() {
       setMovies(JSON.parse(movies));
     }
   }, [localStorage.getItem("search")]);
+
+  if (isLoading) return <Loading />;
 
   return (
     <div className={styles.main}>

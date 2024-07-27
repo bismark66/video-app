@@ -5,6 +5,7 @@ import { Typography, Row, Col } from "antd";
 import styles from "@/app/page.module.css";
 import MovieCard from "./movie-card";
 import Link from "next/link";
+import Loading from "./loading";
 
 interface Movie {
   [x: string]: any;
@@ -24,11 +25,14 @@ function MovieRow({
   request: AsyncFunctionProp;
 }) {
   const [items, setItems] = useState([] as unknown as Movie);
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchData = async () => {
+    setIsLoading(true);
     const response = await request();
     const results = response.results as Movie;
     setItems(results);
+    setIsLoading(false);
   };
 
   const allMovies = items.map(
@@ -57,6 +61,8 @@ function MovieRow({
   useEffect(() => {
     fetchData();
   }, []);
+
+  if (isLoading) return <Loading />;
 
   return (
     <>
