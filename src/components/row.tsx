@@ -1,21 +1,13 @@
 /** @format */
 "use client";
 import React, { useEffect, useState } from "react";
-import { Typography, Flex, Button, Row, Col } from "antd";
+import { Typography, Row, Col } from "antd";
 import styles from "@/app/page.module.css";
 import MovieCard from "./movie-card";
 import Link from "next/link";
 
-const boxStyle: React.CSSProperties = {
-  width: "100%",
-  //   height: 120,
-  borderRadius: 6,
-  //   border: "1px solid #40a9ff",
-};
-
 interface Movie {
   [x: string]: any;
-  //   results(results: any): unknown;
   poster_path: string;
   title: string;
   popularity: number;
