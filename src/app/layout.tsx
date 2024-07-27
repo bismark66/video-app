@@ -18,19 +18,13 @@ const inter = Inter({ subsets: ["latin"] });
 // };
 
 const RootLayout = ({ children }: React.PropsWithChildren) => {
-  // const router = useRouter();
   const pathname = usePathname();
 
   return (
     <html lang="en">
       <body>
         <AntdRegistry>
-          {/* <Navbar>
-            {router.pathname === '/' && <SearchBar />}
-          </Navbar> */}
-
           <Navbar search={pathname === "/"} />
-
           {children}
         </AntdRegistry>
       </body>
