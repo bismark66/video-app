@@ -165,6 +165,9 @@
   .description a {
     padding: 1rem;
   }
+  .main {
+    padding: 1rem;
+  }
 
   /* .description p,
   .description div {

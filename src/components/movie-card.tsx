@@ -20,7 +20,7 @@ function MovieCard({ url, title, view }: Props) {
     <>
       <Card
         hoverable
-        style={{ width: 240 }}
+        style={{ width: "100%" }}
         cover={<img alt={title} src={url} height={220} />}
       >
         {title && (

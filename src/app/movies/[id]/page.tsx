@@ -49,37 +49,51 @@ export default function Page({
 
   return (
     <div className={styles.main}>
-      <Row>
+      <Row justify={"center"} gutter={[16, 16]}>
         <Col
           // span={4}
           // offset={5}
-          xl={{ span: 4, offset: 5 }}
-          lg={{ span: 4, offset: 4 }}
-          md={{ span: 5, offset: 2 }}
-          // sm={{ span: 10, offset: 2 }}
+          span={6}
+          xxl={4}
+          xl={6}
+          lg={8}
+          md={8}
+          sm={12}
+          xs={20}
         >
           <MovieCard
             url={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
           />
         </Col>
         <Col
-          // span={8}
-          xl={{ span: 8, offset: 0 }}
-          lg={{ span: 8, offset: 2 }}
-          md={{ span: 10, offset: 4 }}
-          // sm={10}
+          xl={8}
+          lg={8}
+          md={10}
           style={{
             display: "flex",
             justifyContent: "start",
             flexDirection: "column",
+            paddingLeft: 15,
           }}
         >
           <h1>{movie.title}</h1>
           <p style={{ padding: "10px 0" }}>{movie.overview}</p>
           <p style={{ padding: "10px 0" }}>
-            Release Date : {movie.release_date} Views : {movie.popularity}
+            <span>
+              <strong>Release Date : </strong>
+              {movie.release_date}{" "}
+            </span>{" "}
+            <span style={{ paddingLeft: 20 }}>
+              <strong> Views : {movie.popularity}</strong>
+            </span>
           </p>
-          <p>id: {movie.id}</p>
+          <p>
+            {" "}
+            <span>
+              <strong>ID : </strong>
+            </span>{" "}
+            {movie.id}
+          </p>
         </Col>
       </Row>
     </div>
