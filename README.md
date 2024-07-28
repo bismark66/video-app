@@ -15,11 +15,14 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started, How to run locally on your machine
 
-1. Clone this project
-2. Install all dependencies by `npm / yarn / pnpm / bun install` from the project terminal
-3. Create your public api key from IMDB using the link shown in IMDB Public API and configure in your .env file
+1. Clone this project by running `git clone [git@github.com:bismark66/video-app.git](git@github.com:bismark66/video-app.git)`
+2. Install all dependencies by `npm / yarn / pnpm / bun install` from the project directory
+3. Create your public api key from IMDB using the link shown in IMDB Public API and configure in your .env.local file
 
-Finally, run the development server:
+- Use this api key, NEXT_PUBLIC_TMDB_API_KEY= b390329d9a4bbb3b5a960d29cbf30152
+- Use this access token, NEXT_PUBLIC_TMDB_ACCESS_TOKEN=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiMzkwMzI5ZDlhNGJiYjNiNWE5NjBkMjljYmYzMDE1MiIsIm5iZiI6MTcyMTY5OTE4Ni41NDI1MzYsInN1YiI6IjYyYzg2NzZkMTNhMzIwMDA0ZjVjYmFiNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PkSuBfkYRZt8PdsX_6y9BCF-x1RiD3Mf0zmXKFYgIZ0
+
+4. Finally, run the development server:
 
 ```bash
 npm run dev
