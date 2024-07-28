@@ -72,7 +72,7 @@ Testing was done using [Cypress](https://docs.cypress.io/guides/continuous-integ
 
 ## Deployment
 
-App was deployed to vercel https://video-app-rho-six.vercel.app/
+App was deployed to vercel https://video-app-orcin-seven.vercel.app/
 
 ## Find bugs
 
