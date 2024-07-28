@@ -35,7 +35,7 @@ function Search() {
 
   const allMovies = movies.map(
     (movie: any, index: React.Key | null | undefined) => (
-      <Col span={6} key={index}>
+      <Col span={6} xxl={6} xl={6} lg={8} md={8} sm={12} xs={24} key={index}>
         <Link href={`/movies/${movie.id}`}>
           <MovieCard
             url={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
@@ -60,7 +60,24 @@ function Search() {
 
   return (
     <div className={styles.main}>
-      <SearchBar onSearch={onSearch} />
+      <Row justify={"center"}>
+        <Col
+          // span={24}
+          xxl={24}
+          xl={24}
+          lg={{ span: 24 }}
+          md={{ span: 24 }}
+          sm={{ span: 24 }}
+          xs={{ span: 24 }}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignSelf: "center",
+          }}
+        >
+          <SearchBar onSearch={onSearch} />
+        </Col>
+      </Row>
 
       <Row
         wrap={true}

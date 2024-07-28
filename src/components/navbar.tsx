@@ -84,7 +84,7 @@ function Navbar({ search }: { search: boolean }) {
                   display: "flex",
                   justifyContent: "center",
                 }}
-                overflowedIndicator={"hat"}
+                overflowedIndicator={"Menu"}
               />
             </Col>
           </Row>

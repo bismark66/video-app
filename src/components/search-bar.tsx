@@ -13,7 +13,7 @@ function SearchBar(props: any) {
         size="middle"
         // onChange={(e) => setChange(e.target.value)}
         onSearch={props.onSearch}
-        style={{ width: 400 }}
+        style={{ maxWidth: "400px" }}
       />
     </>
   );
