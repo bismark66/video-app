@@ -2,9 +2,13 @@
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Getting Started, How to run locally on your machine
 
-First, run the development server:
+1. Clone this project
+2. Install all dependencies by `npm / yarn / pnpm / bun install` from the project terminal
+3. Create your public api key from IMDB using the link shown in IMDB Public API and configure in your .env file
+
+Finally, run the development server:
 
 ```bash
 npm run dev
@@ -17,6 +21,8 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+Hurrayyyy!!! You are all set to make changes to any part of the project!
 
 # A video app created using nextjs
 
