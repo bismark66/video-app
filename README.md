@@ -55,3 +55,6 @@ Use The Movie Database API to fetch movie data. You can sign up for an API key a
 Top Rated Movies - https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}
 Up Coming Movies - https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}
 Popular Movies - https://api.themoviedb.org/3/movie/popular?api_key=${api_key}
+Get Movie External ID - https://api.themoviedb.org/3/movie/${id}/external_ids?api_key=${api_key}
+Get Movie By External ID - https://api.themoviedb.org/3/find/${external_id}?external_source=imdb_id
+Search Movie By Value Passed To URL - https://api.themoviedb.org/3/search/movie?query=${value}
