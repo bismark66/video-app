@@ -87,7 +87,7 @@ function Search() {
         style={{ margin: "20px 0 30px 0" }}
         // style={{ overflowX: "auto", marginTop: 20 }}
       >
-        {allMovies.length !== 0 ? allMovies : <h1>No Movie FOund</h1>}
+        {allMovies.length !== 0 ? allMovies : <h1>No Movie Found</h1>}
       </Row>
     </div>
   );

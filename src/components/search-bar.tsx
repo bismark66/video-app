@@ -8,6 +8,7 @@ function SearchBar(props: any) {
   return (
     <>
       <Search
+        className="searchInput"
         placeholder="search movie"
         allowClear
         size="middle"
