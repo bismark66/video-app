@@ -8,6 +8,7 @@ import SearchBar from "@/components/search-bar";
 import { GetProps, Input, Col, Row } from "antd";
 import Link from "next/link";
 import Loading from "@/components/loading";
+import MoviePoster from "../../../public/assets/movie_poster.jpeg";
 
 type SearchProps = GetProps<typeof Input.Search>;
 interface Movie {
@@ -36,7 +37,12 @@ function Search() {
       <Col span={6} xxl={6} xl={6} lg={8} md={8} sm={12} xs={24} key={index}>
         <Link href={`/movies/${movie.id}`}>
           <MovieCard
-            url={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+            // url={movie.poster_path ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}` : MoviePoster}
+            url={
+              movie.poster_path
+                ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+                : "/assets/movie_poster.jpeg"
+            }
             title={movie.title}
             view={movie.popularity}
           />

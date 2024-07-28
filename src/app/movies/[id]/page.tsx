@@ -44,12 +44,17 @@ export default function Page({
 
   if (isLoading) return <Loading />;
 
+  console.log("----", movie);
   return (
     <div className={styles.main}>
       <Row justify={"center"} gutter={[16, 16]}>
         <Col span={6} xxl={4} xl={6} lg={8} md={8} sm={12} xs={20}>
           <MovieCard
-            url={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+            url={
+              movie
+                ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+                : "/assets/movie_poster.jpeg"
+            }
           />
         </Col>
         <Col
@@ -63,24 +68,30 @@ export default function Page({
             paddingLeft: 15,
           }}
         >
-          <h1>{movie.title}</h1>
-          <p style={{ padding: "10px 0" }}>{movie.overview}</p>
-          <p style={{ padding: "10px 0" }}>
-            <span>
-              <strong>Release Date : </strong>
-              {movie.release_date}{" "}
-            </span>{" "}
-            <span style={{ paddingLeft: 20 }}>
-              <strong> Views : {movie.popularity}</strong>
-            </span>
-          </p>
-          <p>
-            {" "}
-            <span>
-              <strong>ID : </strong>
-            </span>{" "}
-            {movie.id}
-          </p>
+          {movie ? (
+            <>
+              <h1>{movie.title}</h1>
+              <p style={{ padding: "10px 0" }}>{movie.overview}</p>
+              <p style={{ padding: "10px 0" }}>
+                <span>
+                  <strong>Release Date : </strong>
+                  {movie?.release_date}{" "}
+                </span>{" "}
+                <span style={{ paddingLeft: 20 }}>
+                  <strong> Views : {movie.popularity}</strong>
+                </span>
+              </p>
+              <p>
+                {" "}
+                <span>
+                  <strong>ID : </strong>
+                </span>{" "}
+                {movie.id}
+              </p>
+            </>
+          ) : (
+            <h1> No details of this Movie was found</h1>
+          )}
         </Col>
       </Row>
     </div>
