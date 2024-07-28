@@ -31,8 +31,6 @@ function Search() {
     setIsLoading(false);
   };
 
-  // if (movies.length != 0) return;
-
   const allMovies = movies.map(
     (movie: any, index: React.Key | null | undefined) => (
       <Col span={6} xxl={6} xl={6} lg={8} md={8} sm={12} xs={24} key={index}>
@@ -62,7 +60,6 @@ function Search() {
     <div className={styles.main}>
       <Row justify={"center"}>
         <Col
-          // span={24}
           xxl={24}
           xl={24}
           lg={{ span: 24 }}
@@ -85,7 +82,6 @@ function Search() {
         justify={"center"}
         className={styles.description}
         style={{ margin: "20px 0 30px 0" }}
-        // style={{ overflowX: "auto", marginTop: 20 }}
       >
         {allMovies.length !== 0 ? allMovies : <h1>No Movie Found</h1>}
       </Row>

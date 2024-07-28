@@ -47,17 +47,7 @@ export default function Page({
   return (
     <div className={styles.main}>
       <Row justify={"center"} gutter={[16, 16]}>
-        <Col
-          // span={4}
-          // offset={5}
-          span={6}
-          xxl={4}
-          xl={6}
-          lg={8}
-          md={8}
-          sm={12}
-          xs={20}
-        >
+        <Col span={6} xxl={4} xl={6} lg={8} md={8} sm={12} xs={20}>
           <MovieCard
             url={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
           />

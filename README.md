@@ -68,7 +68,11 @@ This Projects leverages the use of [ant design](https://ant.design/components/ov
 
 ## Testing
 
-Testing was done using [Jest](https://jestjs.io/docs/tutorial-react) testing library
+Testing was done using [Cypress](https://docs.cypress.io/guides/continuous-integration/introduction) testing library
+
+## Deployment
+
+App was deployed to vercel https://video-app-rho-six.vercel.app/
 
 ## Find bugs
 
