@@ -40,11 +40,13 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 # A video app created using nextjs
 
 This project is an example movies applications likew netflix. It uses the IMDB public REST API endpoint for data.
-It uses typescrpt and shows how to render movies onto the frontend.Every part of the prolject is a sample code which shows how to do the following:
+It uses typescrpt and shows how to render movies onto the frontend.Every part of the project is a sample code which shows how to do the following:
 
 - How to use the nextjs app router
 - How to use the nextjs fetch tool for calling api endpoints
 - How to use localstorage to handle data
+- How to use dynamic route or slug
+- How to programmatically route
 
 ## IMDB Public API
 
@@ -58,3 +60,7 @@ Popular Movies - https://api.themoviedb.org/3/movie/popular?api_key=${api_key}
 Get Movie External ID - https://api.themoviedb.org/3/movie/${id}/external_ids?api_key=${api_key}
 Get Movie By External ID - https://api.themoviedb.org/3/find/${external_id}?external_source=imdb_id
 Search Movie By Value Passed To URL - https://api.themoviedb.org/3/search/movie?query=${value}
+
+## Testing
+
+Testing was done using [Jest](https://jestjs.io/docs/tutorial-react) testing library
