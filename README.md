@@ -1,5 +1,16 @@
 <!-- @format -->
 
+# A video app created using nextjs
+
+This project is an example movies applications likew netflix. It uses the IMDB public REST API endpoint for data.
+It uses typescrpt and shows how to render movies onto the frontend.Every part of the project is a sample code which shows how to do the following:
+
+- How to use the nextjs app router
+- How to use the nextjs fetch tool for calling api endpoints
+- How to use localstorage to handle data
+- How to use dynamic route or slug
+- How to programmatically route
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started, How to run locally on your machine
@@ -24,17 +35,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 Hurrayyyy!!! You are all set to make changes to any part of the project!
 
-# A video app created using nextjs
-
-This project is an example movies applications likew netflix. It uses the IMDB public REST API endpoint for data.
-It uses typescrpt and shows how to render movies onto the frontend.Every part of the project is a sample code which shows how to do the following:
-
-- How to use the nextjs app router
-- How to use the nextjs fetch tool for calling api endpoints
-- How to use localstorage to handle data
-- How to use dynamic route or slug
-- How to programmatically route
-
 ## IMDB Public API
 
 Use The Movie Database API to fetch movie data. You can sign up for an API key at [TMDb](https://www.themoviedb.org/)
@@ -55,6 +55,10 @@ This Projects leverages the use of [ant design](https://ant.design/components/ov
 ## Testing
 
 Testing was done using [Jest](https://jestjs.io/docs/tutorial-react) testing library
+
+## Find bugs
+
+If you found an issue and would like to submit an improvement to this project, please submit an issue using the issues tab above. If you would like to submit a PR with a fix, reference the issue you created!
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
