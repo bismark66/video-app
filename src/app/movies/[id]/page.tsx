@@ -1,7 +1,7 @@
 /** @format */
 "use client";
 import HttpHandler from "@/api/httpHandler";
-import MovieCard from "@/components/movie-card";
+import MovieCard from "@/components/movieCard";
 import { Row, Col } from "antd";
 import React, { useEffect, useState } from "react";
 import styles from "../../page.module.css";

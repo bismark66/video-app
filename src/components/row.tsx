@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Typography, Row, Col } from "antd";
 import styles from "@/app/page.module.css";
-import MovieCard from "./movie-card";
+import MovieCard from "./movieCard";
 import Link from "next/link";
 import Loading from "./loading";
 

@@ -3,7 +3,7 @@
 import HttpHandler from "@/api/httpHandler";
 import React, { useEffect, useState } from "react";
 import styles from "../page.module.css";
-import MovieCard from "@/components/movie-card";
+import MovieCard from "@/components/movieCard";
 import SearchBar from "@/components/search-bar";
 import { GetProps, Input, Col, Row } from "antd";
 import Link from "next/link";
