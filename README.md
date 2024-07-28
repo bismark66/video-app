@@ -15,7 +15,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started, How to run locally on your machine
 
-1. Clone this project by running `git clone [git@github.com:bismark66/video-app.git](git@github.com:bismark66/video-app.git)`
+1. Clone this project by running `git clone git@github.com:bismark66/video-app.git`
 2. Install all dependencies by `npm / yarn / pnpm / bun install` from the project directory
 3. Create your public api key from IMDB using the link shown in IMDB Public API and configure in your .env.local file
 
