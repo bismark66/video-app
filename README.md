@@ -1,3 +1,5 @@
+<!-- @format -->
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -34,3 +36,22 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+# A video app created using nextjs
+
+This project is an example movies applications likew netflix. It uses the IMDB public REST API endpoint for data.
+It uses typescrpt and shows how to render movies onto the frontend.Every part of the prolject is a sample code which shows how to do the following:
+
+- How to use the nextjs app router
+- How to use the nextjs fetch tool for calling api endpoints
+- How to use localstorage to handle data
+
+## IMDB Public API
+
+Use The Movie Database API to fetch movie data. You can sign up for an API key at [TMDb](https://www.themoviedb.org/)
+
+## Endpoints Used
+
+Top Rated Movies - https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}
+Up Coming Movies - https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}
+Popular Movies - https://api.themoviedb.org/3/movie/popular?api_key=${api_key}
