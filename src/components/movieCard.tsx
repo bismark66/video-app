@@ -16,6 +16,14 @@ function MovieCard({ url, title, view }: Props) {
     views = Math.ceil(+view);
   }
 
+  function truncateTitle(title: string) {
+    let maxLength = 20;
+    if (title.length > maxLength) {
+      return title.slice(0, maxLength) + "...";
+    }
+    return title;
+  }
+
   return (
     <>
       <Card
@@ -25,7 +33,7 @@ function MovieCard({ url, title, view }: Props) {
       >
         {title && (
           <Meta
-            title={<h3 style={{ textWrap: "wrap" }}>{title}</h3>}
+            title={<h3 style={{ textWrap: "wrap" }}>{truncateTitle(title)}</h3>}
             description={<h4>Views: {views}</h4>}
           />
         )}

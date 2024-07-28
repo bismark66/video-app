@@ -91,7 +91,7 @@ function MovieRow({
           wrap={false}
           gutter={[16, 16]}
           className={styles.row}
-          style={{ overflowX: "auto" }}
+          style={{ overflowX: "auto", display: "flex", alignItems: "stretch" }}
         >
           {allMovies}
         </Row>
