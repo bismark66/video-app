@@ -48,13 +48,13 @@ function Search() {
   );
 
   useEffect(() => {
-    let movies = localStorage.getItem("search");
-    localStorage.removeItem("search");
-    console.log(movies);
-    if (movies) {
-      setMovies(JSON.parse(movies));
+    if (typeof window !== "undefined") {
+      let movies = localStorage.getItem("search");
+      localStorage.removeItem("search");
+
+      movies && setMovies(JSON.parse(movies));
     }
-  }, [localStorage.getItem("search")]);
+  }, []);
 
   if (isLoading) return <Loading />;
 

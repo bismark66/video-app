@@ -34,16 +34,17 @@ function Navbar({ search }: { search: boolean }) {
   const router = useRouter();
 
   const onClick: MenuProps["onClick"] = (e) => {
-    console.log("click ", e);
     setCurrent(e.key);
   };
 
   const onSearch: SearchProps["onSearch"] = async (value: string, _e: any) => {
-    const response = await HttpHandler.Search(value);
-    const results = response.results as Movie;
-    localStorage.setItem("search", JSON.stringify(results));
+    if (value != "") {
+      const response = await HttpHandler.Search(value);
+      const results = response.results as Movie;
+      localStorage.setItem("search", JSON.stringify(results));
 
-    router.push("/search");
+      router.push("/search");
+    }
   };
 
   return (

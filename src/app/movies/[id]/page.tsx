@@ -38,12 +38,9 @@ export default function Page({
     setIsLoading(false);
   }
 
-  console.log(params.id);
-
   useEffect(() => {
     fetchMovie(params.id);
   }, []);
-  console.log(movie, movie.overview);
 
   if (isLoading) return <Loading />;
 
