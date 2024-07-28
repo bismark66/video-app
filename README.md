@@ -42,6 +42,10 @@ Use The Movie Database API to fetch movie data. You can sign up for an API key a
 - Get Movie By External ID - https://api.themoviedb.org/3/find/${external_id}?external_source=imdb_id
 - Search Movie By Value Passed To URL - https://api.themoviedb.org/3/search/movie?query=${value}
 
+## Frameworks
+
+This Projects leverages the use of [ant design](https://ant.design/components/overview/) component libraries for some of it core components
+
 ## Testing
 
 Testing was done using [Jest](https://jestjs.io/docs/tutorial-react) testing library
