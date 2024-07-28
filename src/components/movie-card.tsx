@@ -25,7 +25,7 @@ function MovieCard({ url, title, view }: Props) {
       >
         {title && (
           <Meta
-            title={<h3>{title}</h3>}
+            title={<h3 style={{ textWrap: "wrap" }}>{title}</h3>}
             description={<h4>Views: {views}</h4>}
           />
         )}
