@@ -8,7 +8,7 @@ import SearchBar from "@/components/search-bar";
 import { GetProps, Input, Col, Row } from "antd";
 import Link from "next/link";
 import Loading from "@/components/loading";
-import MoviePoster from "../../../public/assets/movie_poster.jpeg";
+// import MoviePoster from "../../../public/assets/movie_poster.jpeg";
 
 type SearchProps = GetProps<typeof Input.Search>;
 interface Movie {
