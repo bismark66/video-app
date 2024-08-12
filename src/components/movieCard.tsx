@@ -17,7 +17,7 @@ function MovieCard({ url, title, view }: Props) {
   }
 
   function truncateTitle(title: string) {
-    let maxLength = 20;
+    let maxLength = 17;
     if (title.length > maxLength) {
       return title.slice(0, maxLength) + "...";
     }
